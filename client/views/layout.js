@@ -1,22 +1,22 @@
-Template.tasks.created = function (){
+Template.layout.created = function (){
   console.log('created');
 };
 
-Template.tasks.rendered = function (){
+Template.layout.rendered = function (){
   console.log('rendered');
 };
 
-Template.tasks.destroyed = function (){
+Template.layout.destroyed = function (){
   console.log('destroyed');
 };
 
-Template.tasks.helpers({
+Template.layout.helpers({
   'tasks': function(){
-    return TasksCollection.find().fetch();
+    return TaskCollection.find().fetch();
   }
 });
 
-Template.tasks.events({
+Template.layout.events({
 
 });
 

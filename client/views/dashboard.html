@@ -1,0 +1,32 @@
+<template name="dashboard">
+
+  <a href="/profile/edit">Username</a>
+
+  <h1>Welcome name! Here are your tasks!</h1>
+
+  <div class="table">
+
+    <div id="toDo" class="column">
+      <h3>To Do</h3>
+      <div class="tableColumn">{{> toDo}}</div>
+    </div>
+
+    <div id="inProgress" class="column">
+      <h3>In-progress...</h3>
+      <div class="tableColumn">{{> inProgress}}</div>
+    </div>
+
+
+    <div id="done" class="column">
+      <h3>Done</h3>
+      <div class="tableColumn">{{> done}}</div>
+    </div>
+
+  </div>
+
+</template>
+
+
+<template name="toDo"></template>
+<template name="inProgress"></template>
+<template name="done"></template>

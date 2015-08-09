@@ -1,0 +1,17 @@
+.table{
+   margin: 0 auto;
+   width: 90%;
+   background-color: yellow;
+   height: 90%;
+}
+
+.column {
+  width: 25%;
+  background-color: green;
+  display: inline-block;
+}
+
+.tableColumn {
+  background-color: red;
+  height: 200px;
+}
