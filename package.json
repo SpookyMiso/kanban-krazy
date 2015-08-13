@@ -1,0 +1,25 @@
+{
+  "name": "kanban-krazy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SpookyMiso/kanban-krazy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpookyMiso/kanban-krazy/issues"
+  },
+  "homepage": "https://github.com/SpookyMiso/kanban-krazy",
+  "dependencies": {
+    "dragula": "^3.0.3"
+  }
+}

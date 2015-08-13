@@ -1,32 +1,63 @@
 <template name="dashboard">
 
-  <a href="/profile/edit">Username</a>
+  <div id="navBar">
+    {{currentUser.username}}
+    <a href="/profile/edit">Username</a>
+    <img src="/images/title.png" id="dashboard_title">
+  </div>
 
   <h1>Welcome name! Here are your tasks!</h1>
 
-  <div class="table">
+  <form id="inputForm" class="inputRole" role="form">
+    <input type="text" id="title" placeholder="title">
+    <input type="text" id="description" placeholder="description">
+    <button>submit</button>
+  </form>
 
-    <div id="toDo" class="column">
-      <h3>To Do</h3>
-      <div class="tableColumn">{{> toDo}}</div>
-    </div>
-
-    <div id="inProgress" class="column">
-      <h3>In-progress...</h3>
-      <div class="tableColumn">{{> inProgress}}</div>
-    </div>
-
-
-    <div id="done" class="column">
-      <h3>Done</h3>
-      <div class="tableColumn">{{> done}}</div>
-    </div>
-
-  </div>
+ {{> dragList}}
 
 </template>
 
 
-<template name="toDo"></template>
+<template name="dragList">
+
+  <div class="table wrapper">
+
+    <div id="toDoCol" class="column">
+
+      <h3>To Do</h3>
+
+      <div id="toDo" class="tableColumn container">
+         {{> toDo}}
+      </div>
+
+    </div>
+
+    <div id="inProgressCol" class="column">
+      <h3>In-progress...</h3>
+      <div id="inProgress" class="tableColumn container">{{> inProgress}}</div>
+    </div>
+
+
+    <div id="doneCol" class="column">
+      <h3>Done</h3>
+      <div id="done" class="tableColumn container">{{> done}}</div>
+    </div>
+
+  </div></template>
+
+
+<template name="toDo">
+
+
+  {{#each tasks}}
+    <div class="post_it">
+      <h4>{{ title }}</h4>
+      <h4>{{ description }}</h4>
+    </div>
+  {{/each}}
+
+
+</template>
 <template name="inProgress"></template>
 <template name="done"></template>

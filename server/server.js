@@ -8,3 +8,15 @@ Meteor.startup(function(){
     });
   }
 });
+
+Meteor.methods({
+  'submitPost': function (title, description) {
+    console.log(title);
+    console.log(description);
+
+    TaskCollection.insert({
+      title: title,
+      description: description
+    });
+  }
+});

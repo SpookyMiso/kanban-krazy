@@ -7,3 +7,6 @@
 meteor-platform
 iron:router
 accounts-ui
+accounts-password
+ahref:dragula
+bootstrap

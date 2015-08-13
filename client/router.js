@@ -13,3 +13,7 @@ Router.route('/dashboard', function () {
   // render the PageOne template
   this.render('dashboard');
 });
+
+Template.dragList.onRendered(function(){
+  dragula([document.querySelector('#toDo'), document.querySelector('#inProgress'), document.querySelector('#done')]);
+});

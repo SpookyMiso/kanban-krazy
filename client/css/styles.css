@@ -1,17 +1,105 @@
+/*login*/
+
+body {
+  margin: 0;
+  background-color: #330000;
+}
+
+#login_title {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  width: 55%;
+}
+
+h3 {
+  margin: 0 0 0 10px;
+  font-family: 'News Cycle', sans-serif;
+  font-weight: 400;
+  color: white;
+  padding-left: 10px;
+
+}
+
+form {
+  padding-left: 10px;
+  width: 200px;
+}
+
+input {
+  margin-top: 5px;
+}
+
+button {
+  width: 126px;
+  margin-top: 5px;
+}
+
+#headerLogin{
+  max-width: 90%;
+  width: 100%;
+  background-color: transparent;
+  height: 150px;
+  padding: 20px 10px 0 10px;
+}
+
+#loginText {
+  /*background: url("/images/login_background.png") no-repeat;*/
+  /*height: 600px;*/
+  /*background-size: 100%;*/
+}
+
+#login_background {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+  background: no-repeat url('/images/background_login.jpg');
+  background-size: cover;
+}
+
+
+#dashboard_title {
+  max-width: 200px;
+}
+
+#navBar {
+
+}
+
+
 .table{
    margin: 0 auto;
    width: 90%;
-   background-color: yellow;
    height: 90%;
 }
 
 .column {
-  width: 25%;
+  width: 32%;
   background-color: green;
   display: inline-block;
+  border: brown solid 3px;
+
 }
 
 .tableColumn {
-  background-color: red;
-  height: 200px;
+  height: 350px;
+  background-image: url("/images/cork.jpg");
+  background-size: cover;
+  position: absolute;
 }
+
+
+a {
+  float: right;
+  padding-right: 10px;
+  text-decoration: none;
+  font-family: 'News Cycle', sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+#login-dropdown-list {
+
+}
+
