@@ -10,11 +10,11 @@ Template.layout.destroyed = function (){
   console.log('destroyed');
 };
 
-Template.layout.helpers({
-  'tasks': function(){
-    return TaskCollection.find().fetch();
-  }
-});
+// Template.layout.helpers({
+//   'tasks': function(){
+//     return TaskCollection.find().fetch();
+//   }
+// });
 
 Template.layout.events({
    "keypress #login-password": function (evt,tmpl) {
@@ -35,10 +35,24 @@ Template.layout.events({
       Meteor.call('submitPost', title, description);
    }
 
+
+
 });
+Template.toDo.helpers({
+  "tasks": function() {
+    return TaskCollection.find();
+  }
+});
+// Template.toDo.tasks = function () {
+//   return TaskCollection.find();
+// };
 
-Template.toDo.tasks = function () {
-  return TaskCollection.find();
-};
-
+Template.toDo.events({
+  'click .post_it': function ( evt, tmpl ) {
+    console.log("hello");
+      if(evt.removeOnSpill === true) {
+        TaskCollection.remove(this.id);
+      }
+   }
+ });
 

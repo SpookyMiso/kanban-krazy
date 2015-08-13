@@ -89,6 +89,10 @@ button {
   position: absolute;
 }
 
+#trash {
+  display: block;
+}
+
 
 a {
   float: right;
