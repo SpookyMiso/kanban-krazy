@@ -33,6 +33,45 @@ Template.layout.events({
    }
 });
 
+Template.profile.events({
+  'submit #passwordForm': function (evt, tmpl) {
+    evt.preventDefault();
+      var oldPassword = event.target.currentPassword.value;
+      var newPassword = event.target.newPassword.value;
+      var confirmPass = event.target.confirmPass.value;
+
+    Session.set("Error", null);
+
+    console.log(Meteor.user().password);
+    // if(oldPassword !== Meteor.user().password
+
+    if(newPassword === confirmPass) {
+      Accounts.changePassword(oldPassword, newPassword, function (error) {
+        if(error) {
+
+          if(error.reason === "Incorrect password") {
+            Session.set("Error", "Your current password is incorrect.");
+          } else {
+            Session.set("Error", error.reason);
+          }
+
+        } else {
+          Session.set("Error", "Password was successfully changed!");
+        }
+      });
+
+    } else {
+      Session.set("Error", "New password and password confirmation do not match");
+    }
+  }
+});
+
+Template.profile.helpers({
+  errorPassword: function () {
+    return Session.get("Error");
+  }
+});
+
 Template.toDo.helpers({
   "tasks": function() {
     return TaskCollection.find({state: "toDo"}).fetch();
