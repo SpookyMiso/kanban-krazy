@@ -21,6 +21,15 @@ Router.route('/profile/edit', function () {
   this.render('profile');
 });
 
+// Meteor.loggingIn();
+
+Accounts.onLogin( function (){
+  console.log('hello');
+  Router.go('/dashboard');
+});
+
+
+
 Template.dragList.onRendered(function(){
 
   dragula([document.querySelector('#toDo'), document.querySelector('#inProgress'), document.querySelector('#done'), document.querySelector('#trash')], { removeOnSpill: true,

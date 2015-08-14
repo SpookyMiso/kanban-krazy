@@ -11,10 +11,11 @@ Meteor.startup(function(){
 
 Meteor.methods({
   'submitPost': function (title, description) {
-    console.log(title);
-    console.log(description);
+    console.log('submit post');
+    console.log(Meteor.user().username);
 
     TaskCollection.insert({
+      username: Meteor.user().username,
       title: title,
       description: description
     });

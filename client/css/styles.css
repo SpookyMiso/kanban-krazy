@@ -5,6 +5,10 @@ body {
   background-color: #330000;
 }
 
+h1 {
+  color: white;
+}
+
 #login_title {
   max-width: 100%;
   margin: 0 auto;
@@ -13,12 +17,10 @@ body {
 }
 
 h3 {
-  margin: 0 0 0 10px;
   font-family: 'News Cycle', sans-serif;
   font-weight: 400;
-  color: white;
-  padding-left: 10px;
-
+  color: #575757;
+  display: inline;
 }
 
 form {
@@ -41,12 +43,6 @@ button {
   background-color: transparent;
   height: 150px;
   padding: 20px 10px 0 10px;
-}
-
-#loginText {
-  /*background: url("/images/login_background.png") no-repeat;*/
-  /*height: 600px;*/
-  /*background-size: 100%;*/
 }
 
 #login_background {

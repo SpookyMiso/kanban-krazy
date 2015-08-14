@@ -1,12 +1,12 @@
 <template name="dashboard">
 
   <div id="navBar">
-    {{currentUser.username}}
-    <a href="/profile/edit">Username</a>
-    <img src="/images/title.png" id="dashboard_title">
+    <a href="/profile/edit">{{currentUser.username}}</a>
+    <img src="/images/title2.png" id="dashboard_title">
+    <button id="logOut">Logout</button>
   </div>
 
-  <h1>Welcome name! Here are your tasks!</h1>
+  <h1>Welcome {{currentUser.username}}! Here are your tasks!</h1>
 
   <form id="inputForm" class="inputRole" role="form">
     <input type="text" id="title" placeholder="title">
