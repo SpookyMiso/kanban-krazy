@@ -15,9 +15,10 @@ Meteor.methods({
     console.log(Meteor.user().username);
 
     TaskCollection.insert({
-      username: Meteor.user().username,
+      userId: Meteor.userId(),
       title: title,
-      description: description
+      description: description,
+      state: "toDo"
     });
   }
 });

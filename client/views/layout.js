@@ -35,13 +35,21 @@ Template.layout.events({
 
 Template.toDo.helpers({
   "tasks": function() {
-    return TaskCollection.find().fetch();
+    return TaskCollection.find({state: "toDo"}).fetch();
   }
 });
 
-Template.toDo.tasks = function () {
-  return TaskCollection.find().fetch();
-};
+Template.inProgress.helpers({
+  "tasks": function() {
+    return TaskCollection.find({state: "inProgress"}).fetch();
+  }
+});
+
+Template.done.helpers({
+  "tasks": function() {
+    return TaskCollection.find({state: "done"}).fetch();
+  }
+});
 
 Template.toDo.events({
   'click .post_it': function ( evt, tmpl ) {
@@ -59,4 +67,30 @@ Template.toDo.events({
       Meteor.call('submitPost', title, description);
    }
  });
+
+Template.dragList.onRendered(function(){
+
+  dragula([document.querySelector('#toDo'), document.querySelector('#inProgress'), document.querySelector('#done'), document.querySelector('#trash')], { removeOnSpill: true,
+    accepts: function(element, target, source) {
+      return true;
+    }
+
+  }).on('drop', function (element, target, source) {
+    if(target === document.querySelector('#trash')) {
+      console.log(element);
+      TaskCollection.remove({_id: element.id});
+    } else if
+      (target === document.querySelector('#toDo')) {
+      TaskCollection.update({_id: element.id}, {$set: {state: "toDo"}});
+    } else if
+      (target === document.querySelector('#inProgress')) {
+      TaskCollection.update({_id: element.id}, {$set: {state: "inProgress"}});
+    } else if
+      (target === document.querySelector('#done')) {
+      TaskCollection.update({_id: element.id}, {$set: {state: "done"}});
+    }
+  });
+
+});
+
 

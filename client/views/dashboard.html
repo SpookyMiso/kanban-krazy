@@ -63,5 +63,25 @@
 
 
 </template>
-<template name="inProgress"></template>
-<template name="done"></template>
+
+<template name="inProgress">
+
+   {{#each tasks}}
+    <div id="{{_id}}" class="post_it">
+      <h4>{{ title }}</h4>
+      <h4>{{ description }}</h4>
+    </div>
+  {{/each}}
+
+</template>
+
+<template name="done">
+
+   {{#each tasks}}
+    <div id="{{_id}}" class="post_it">
+      <h4>{{ title }}</h4>
+      <h4>{{ description }}</h4>
+    </div>
+  {{/each}}
+
+</template>

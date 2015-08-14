@@ -1,48 +1,38 @@
-Router.route('/', function () {
-  // set the layout programmatically
-  this.layout('layout');
+Router.configure({
+  layoutTemplate: "layout"
+});
 
-  // render the PageOne template
-  this.render('login');
+Router.route('/', {
+  name: 'login',
+  onBeforeAction: function(){
+    if(Meteor.user()) {
+      this.redirect('/dashboard');
+    } else {
+      // take to dashboard
+      this.next();
+    }
+  }
 });
 
 Router.route('/dashboard', function () {
-  // set the layout programmatically
-  this.layout('layout');
-
   // render the PageOne template
   this.render('dashboard');
 });
 
 Router.route('/profile/edit', function () {
-
-  this.layout('layout');
-
   this.render('profile');
 });
 
-// Meteor.loggingIn();
-
-Accounts.onLogin( function (){
-  console.log('hello');
-  Router.go('/dashboard');
-});
-
-
-
-Template.dragList.onRendered(function(){
-
-  dragula([document.querySelector('#toDo'), document.querySelector('#inProgress'), document.querySelector('#done'), document.querySelector('#trash')], { removeOnSpill: true,
-    accepts: function(element, target, source) {
-      return true;
-    }
-
-  }).on('drop', function (element, target, source) {
-    if(target === document.querySelector('#trash')) {
-      console.log(element);
-      TaskCollection.remove({_id: element.id});
-    }
-
-  });
-
+Router.onBeforeAction(function () {
+  //if there is no user logged in and if no one is in the process of logging in
+  if(!Meteor.user() && !Meteor.loggingIn()) {
+    //take to login
+    this.render('login');
+  } else {
+    // take to dashboard
+    this.next();
+  }
+}, {
+  //using template name :D
+  except: ['login']
 });
