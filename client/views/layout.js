@@ -91,12 +91,12 @@ Template.done.helpers({
 });
 
 Template.toDo.events({
-  'click .post_it': function ( evt, tmpl ) {
-    console.log("hello");
-      if(evt.removeOnSpill === true) {
-        TaskCollection.remove(this.id);
-      }
-   },
+  // 'click .post_it': function ( evt, tmpl ) {
+  //   console.log("hello");
+  //     if(evt.removeOnSpill === true) {
+  //       TaskCollection.remove(this.id);
+  //     }
+  //  },
 
    'submit #inputForm': function (evt, tmpl) {
     evt.preventDefault();
@@ -109,13 +109,13 @@ Template.toDo.events({
 
 Template.dragList.onRendered(function(){
 
-  dragula([document.querySelector('#toDo'), document.querySelector('#inProgress'), document.querySelector('#done'), document.querySelector('#trash')], { removeOnSpill: true,
+  dragula([document.querySelector('#toDo'), document.querySelector('#inProgress'), document.querySelector('#done'), document.querySelector('#trash_can')], { //removeOnSpill: true,
     accepts: function(element, target, source) {
       return true;
     }
 
   }).on('drop', function (element, target, source) {
-    if(target === document.querySelector('#trash')) {
+    if(target === document.querySelector('#trash_can')) {
       console.log(element);
       TaskCollection.remove({_id: element.id});
     } else if

@@ -2,11 +2,12 @@
 
 body {
   margin: 0;
-  background-color: #330000;
+  background-color: #FFF;
 }
 
 h1 {
-  color: white;
+  color: #575757;
+  margin: 10px;
 }
 
 #login_title {
@@ -57,6 +58,7 @@ button {
 
 #dashboard_title {
   max-width: 200px;
+  margin: 10px;
 }
 
 #navBar {
@@ -74,12 +76,14 @@ button {
   width: 32%;
   background-color: green;
   display: inline-block;
-  border: brown solid 3px;
+  text-align: center;
 
 }
 
 .tableColumn {
   height: 350px;
+  max-height: 100%;
+  width: 28.8%;
   background-image: url("/images/cork.jpg");
   background-size: cover;
   position: absolute;
@@ -87,8 +91,14 @@ button {
 
 #trash {
   display: block;
+  width: 100%;
 }
 
+#trash img {
+  float:right;
+  margin-right: 0;
+  width:100px;
+}
 
 a {
   float: right;
@@ -99,7 +109,24 @@ a {
   color: white;
 }
 
-#login-dropdown-list {
+.post_it {
+    background:
+      url("/images/Post-it-note.png");
+  background-size: cover;
+  width: 317px;
+  height: 275px;
+  margin: 10px auto 0 15%;
+  position: relative;
+  float: left;
+  padding-top: 60px;
 
+}
+
+
+
+.post_it h4{
+  font: 12px;
+  margin: 0;
+  text-align: center;
 }
 
