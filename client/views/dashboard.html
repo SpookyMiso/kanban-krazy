@@ -1,18 +1,13 @@
 <template name="dashboard">
-
+  <div id="dashboard_background">
+  </div>
   <div id="navBar">
-    <a href="/profile/edit">{{currentUser.username}}</a>
-    <img src="/images/title2.png" id="dashboard_title">
-    <button id="logOut">Logout</button>
+    <button class="logOut">Logout</button>
+    <a href="/profile/edit">
+    Welcome {{currentUser.username}}</a>
+    <a id="dashboard_title" href="/dashboard"><img src="/images/title2.png"></a>
   </div>
 
-  <h1>Welcome {{currentUser.username}}! Here are your tasks!</h1>
-
-  <form id="inputForm" class="inputRole" role="form">
-    <input type="text" id="title" placeholder="title">
-    <input type="text" id="description" placeholder="description">
-    <button>submit</button>
-  </form>
 
  {{> dragList}}
 
@@ -22,8 +17,16 @@
 <template name="dragList">
 
   <div class="table wrapper">
+    <h1 id="addTasks">ADD YOUR TASKS!</h1>
+
+    <form id="inputForm" class="inputRole" role="form">
+      <input type="text" id="title" placeholder="title">
+      <input type="text" id="description" placeholder="description">
+      <button id="addTaskB">submit</button>
+    </form>
     <div id="trash" class="container">
       <img src="/images/trash.png" id="trash_can" class="container">
+      <div class="clearfix"></div>
     </div>
 
     <div id="toDoCol" class="column">

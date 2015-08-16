@@ -3,11 +3,42 @@
 body {
   margin: 0;
   background-color: #FFF;
+  height: 100%;
+  background: url('/images/tree_bark.png');
+  background-repeat: repeat;
+}
+
+html{
+  min-height: 100%;
 }
 
 h1 {
   color: #575757;
-  margin: 10px;
+  padding-left: 10px;
+  font-family: "basicbitch";
+  /*font-weight: 300;*/
+  letter-spacing: 1px;
+}
+
+h5 {
+  color: #575757;
+  padding-left: 10px;
+  font-family: "basicbitch";
+  /*font-weight: 300;*/
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 35px;
+  margin-top: 100px;
+}
+
+@font-face {
+  font-family: "basicbitch";
+  src: url("/images/basictitlefont2.ttf");
+}
+
+@font-face {
+  font-family: "basicbutton";
+  src: url("/images/BEBAS___.TTF");
 }
 
 #login_title {
@@ -18,32 +49,90 @@ h1 {
 }
 
 h3 {
-  font-family: 'News Cycle', sans-serif;
-  font-weight: 400;
+  font-family: "basicbitch";
   color: #575757;
   display: inline;
+  text-align: center;
 }
 
 form {
   padding-left: 10px;
-  width: 200px;
+  width: 868px;
+  display: inline;
+}
+
+#passwordForm {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#passwordForm input {
+  vertical-align: middle;
+}
+
+#description {
+  width: 500px;
 }
 
 input {
   margin-top: 5px;
+  font-family: Advent Pro;
+  text-align: center;
+  padding-top: 3px;
+  text-transform: uppercase;
+
+}
+
+input.text {
+  padding-top: 5px;
+}
+
+#inputForm {
+  font-size: 200%;
 }
 
 button {
   width: 126px;
   margin-top: 5px;
+  font-family: "basicbutton";
+  letter-spacing: 2px;
+  background-color: #c1bdae;
+
 }
 
-#headerLogin{
-  max-width: 90%;
+#pwButton {
+  text-align: center;
+  margin: 10px auto 0 auto;
+  width: 220px;
+  border-radius: 5px;
+  border-style: none;
+}
+
+#addTaskB {
+  height: 30px;
+  margin-top: 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.logOut {
+  float: right;
+  height: 40px;
+  margin-top: 2px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f3f3f3;
+}
+
+#headerLogin {
   width: 100%;
-  background-color: transparent;
   height: 150px;
-  padding: 20px 10px 0 10px;
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  box-shadow: 2px 3px 50px #484848;
+  background: rgba(193,189,174, 0.7);
 }
 
 #login_background {
@@ -51,18 +140,28 @@ button {
   z-index: -1;
   height: 100vh;
   width: 100%;
-  background: no-repeat url('/images/background_login.jpg');
-  background-size: cover;
+  background: url('/images/wood.png');
+  background-repeat: repeat;
+
+}
+
+.login-link-and-dropdown-list {
+  margin: 0 auto;
 }
 
 
 #dashboard_title {
   max-width: 200px;
-  margin: 10px;
+  margin: 10px 0 10px 106px;
+  float: left;
+
 }
 
 #navBar {
-
+  background-color: #c1bdae;
+  padding: 5px;
+  padding-right: 137px;
+  height: 45px;
 }
 
 
@@ -70,43 +169,117 @@ button {
    margin: 0 auto;
    width: 90%;
    height: 90%;
+   margin-top: 40px;
 }
 
 .column {
   width: 32%;
-  background-color: green;
+  background-color: #c1bdae;
   display: inline-block;
   text-align: center;
+  border: 2px #a69f85 solid;
+  padding-top: 5px;
+}
 
+#toDoCol {
+  margin-left: 10px;
 }
 
 .tableColumn {
-  height: 350px;
-  max-height: 100%;
+  /*height: 350px;*/
+  min-height: 500px;
   width: 28.8%;
   background-image: url("/images/cork.jpg");
   background-size: cover;
   position: absolute;
+  border: 2px #a69f85 solid;
+  margin-left: -2px;
+  /*flex-direction: row;*/
+  display: flex-wrap;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 #trash {
-  display: block;
+  display: inline;
   width: 100%;
 }
 
 #trash img {
   float:right;
-  margin-right: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
   width:100px;
+
 }
 
 a {
   float: right;
   padding-right: 10px;
   text-decoration: none;
-  font-family: 'News Cycle', sans-serif;
-  font-weight: 400;
-  color: white;
+  font-family: "basicbitch";
+  font-size: 35px;
+  color: #575757;
+  text-transform: uppercase;
+  margin-top: 17px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#login-buttons .login-close-text {
+  text-transform: none;
+  text-decoration: none;
+  font-family: "basicbitch";
+
+
+}
+
+a#signup-link.additional-link{
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "basicbitch";
+  font-size: 20px;
+  text-align: center;
+  vertical-align: 10px;
+}
+
+#login-buttons #signup-link {
+  float: none;
+
+}
+
+#login-buttons .login-button, .accounts-dialog .login-button {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "basicbitch";
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+#login-buttons {
+  margin: 30px auto;
+  width: 154px;
+  display: block;
+  padding-left: 30px;
+}
+
+#login-buttons label {
+  font-family: "basicbitch";
+  font-size: 20px;
+}
+
+#login-buttons a {
+  float: none;
+  text-decoration: none;
+}
+
+#login-dropdown-list {
+  top: 51px;
+  left: -68px;
+  text-align: center;
+  background: rgba(193,189,174, 0.7);
 }
 
 .post_it {
@@ -115,18 +288,37 @@ a {
   background-size: cover;
   width: 317px;
   height: 275px;
-  margin: 10px auto 0 15%;
+  margin: 10px auto 0 20%;
   position: relative;
   float: left;
-  padding-top: 60px;
-
+  padding: 60px 10px 10px 10px;
 }
 
 
 
 .post_it h4{
   font: 12px;
-  margin: 0;
   text-align: center;
+  word-wrap: break-word;
+  font-family: "basicbitch";
+  color: #575757;
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
 }
+
+#dashboard_background {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+
+}
+
+.clearfix {
+  clear: both;
+}
+
+
+
 

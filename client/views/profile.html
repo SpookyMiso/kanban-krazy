@@ -1,19 +1,18 @@
 <template name="profile">
 
   <div id="navBar">
-    {{currentUser.username}}
-    <a href="/profile/edit">Username</a>
-    <img src="/images/title.png" id="dashboard_title">
+    <button class="logOut">Logout</button>
+    <a href="/profile/edit"> Hello, {{currentUser.username}}</a>
+    <a id="dashboard_title" href="/dashboard"><img src="/images/title2.png"></a>
   </div>
-  <h2>Hello username</h2>
-  <h3>Do you wanna change your password?</h3>
+  <h5>Do you wanna change your password?</h5>
   <p>{{errorPassword}}</p>
+  <!-- <div class=""></div> -->
   <form id="passwordForm">
     <input type="password" placeholder="Current Password" name="currentPassword">
     <input type="password" placeholder="New Password" name="newPassword">
     <input type="password" placeholder="Confirm New Password" name="confirmPass">
-    <button type="submit">submit</button>
+    <button id="pwButton" type="submit">submit</button>
   </form>
 
-<button>Logout</button>
 </template>

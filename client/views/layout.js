@@ -17,7 +17,7 @@ Template.layout.helpers({
 });
 
 Template.dashboard.events({
-  'click #logOut': function (evt, tmpl) {
+  'click .logOut': function (evt, tmpl) {
   Meteor.logout();
   Router.go('/');
   }
@@ -31,6 +31,13 @@ Template.layout.events({
 
       Meteor.call('submitPost', title, description);
    }
+});
+
+Template.profile.events({
+  'click .logOut': function (evt, tmpl) {
+  Meteor.logout();
+  Router.go('/');
+  }
 });
 
 Template.profile.events({
