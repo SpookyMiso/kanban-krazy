@@ -286,11 +286,10 @@ a#signup-link.additional-link{
     background:
       url("/images/Post-it-note.png");
   background-size: cover;
-  width: 317px;
+  max-width: 317px;
   height: 275px;
-  margin: 10px auto 0 20%;
+  margin: 10px auto 0 auto;
   position: relative;
-  float: left;
   padding: 60px 10px 10px 10px;
 }
 
