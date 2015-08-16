@@ -27,7 +27,7 @@ h5 {
   /*font-weight: 300;*/
   letter-spacing: 1px;
   text-align: center;
-  font-size: 35px;
+  font-size: 39px;
   margin-top: 100px;
 }
 
@@ -228,15 +228,14 @@ a:hover {
   text-decoration: none;
 }
 
-#login-buttons .login-close-text {
+#login-buttons .login-close-text, #back-to-login-link.additional-link {
   text-transform: none;
   text-decoration: none;
   font-family: "basicbitch";
-
-
+  font-size: 15px;
 }
 
-a#signup-link.additional-link{
+a#signup-link.additional-link {
   text-transform: uppercase;
   text-decoration: none;
   font-family: "basicbitch";
